@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urirun-connector-document"
+version = "0.1.0"
+description = "Headless document creation (Markdown/TXT/ODT) — no GUI editor, no LibreOffice."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Tom Sapletta" }]
+dependencies = ["urirun>=0.4.14", "odfpy>=1.4"]
+
+[project.entry-points."urirun.bindings"]
+document = "urirun_connector_document.core:urirun_bindings"
+
+[tool.setuptools.packages.find]
+include = ["urirun_connector_document*"]
